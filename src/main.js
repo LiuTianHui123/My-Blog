@@ -7,9 +7,12 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import './assets/css/style.less'
 import store from './store'
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.use(Antd);
 
 /* eslint-disable no-new */
 new Vue({

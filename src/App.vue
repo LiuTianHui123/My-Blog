@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <keep-alive :include="['Aboutme', 'Message', 'FriendsLink', 'Reward']">
+    <keep-alive
+      :include="['Aboutme', 'Message', 'FriendsLink', 'Reward', 'Home']"
+    >
       <router-view></router-view>
     </keep-alive>
   </div>

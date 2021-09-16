@@ -19,12 +19,12 @@
           <div class="">
             <el-tooltip class="item" content="Github" placement="top">
               <a :href="catchMeObj[isHenery].git" target="_blank"
-                ><i class="fa fa-fw fa-github"></i
+                ><i class="fa fa-fw fa-github" id="catch1"></i
               ></a>
             </el-tooltip>
             <el-tooltip class="item" effect="dark" content="QQ" placement="top">
-              <a :href="catchMeObj[isHenery].qq" target="_blank"
-                ><i class="fa fa-fw fa-qq"></i
+              <a href="javascript:" @click="openVisible1"
+                ><i class="fa fa-fw fa-qq" id="catch2"></i
               ></a>
             </el-tooltip>
             <el-tooltip
@@ -34,7 +34,7 @@
               placement="top"
             >
               <a :href="catchMeObj[isHenery].sina" target="_blank"
-                ><i class="fa fa-fw fa-weibo"></i
+                ><i class="fa fa-fw fa-weibo" id="catch3"></i
               ></a>
             </el-tooltip>
           </div>
@@ -45,8 +45,8 @@
               content="微信"
               placement="top"
             >
-              <a :href="catchMeObj[isHenery].wechat" target="_blank"
-                ><i class="fa fa-fw fa-wechat"></i
+              <a href="javascript:" @click="openVisible"
+                ><i class="fa fa-fw fa-wechat" id="catch4"></i
               ></a>
             </el-tooltip>
             <el-tooltip
@@ -56,7 +56,7 @@
               placement="top"
             >
               <a :href="catchMeObj[isHenery].csdn" target="_blank"
-                ><i class="">C</i></a
+                ><i class="" id="catch5">C</i></a
               >
             </el-tooltip>
             <el-tooltip
@@ -66,7 +66,7 @@
               placement="top"
             >
               <a :href="catchMeObj[isHenery].job" target="_blank"
-                ><i class="fa fa-fw fa-file-word-o"></i
+                ><i class="fa fa-fw fa-file-word-o" id="catch6"></i
               ></a>
             </el-tooltip>
             <el-tooltip
@@ -75,7 +75,7 @@
               content="更多"
               placement="top"
             >
-              <a href="#/Aboutme"><i class="el-icon-more"></i></a>
+              <a href="#/Aboutme"><i class="el-icon-more" id="catch7"></i></a>
             </el-tooltip>
           </div>
         </div>
@@ -151,6 +151,24 @@
         alt=""
       />
     </div>
+    <a-modal
+      :visible="visible"
+      :footer="null"
+      destroyOnClose
+      @cancel="cancel"
+      :closable="false"
+    >
+      <img src="static/img/aimee/erwm.jpg" alt="" class="modalone" />
+    </a-modal>
+    <a-modal
+      :visible="visible1"
+      :footer="null"
+      destroyOnClose
+      @cancel="cancel1"
+      :closable="false"
+    >
+      <img src="static/img/aimee/QQ.jpg" alt="" class="modalone" />
+    </a-modal>
   </div>
 </template>
 
@@ -166,6 +184,8 @@ export default {
   data() {
     //选项 / 数据
     return {
+      visible: false,
+      visible1: false,
       fixDo: false,
       loveme: false,
       gotoTop: false, //返回顶部
@@ -185,7 +205,7 @@ export default {
           job: "http://qinlh.mangoya.cn/MyResume/",
         },
         Henery: {
-          git: "https://github.com/Aimee1608",
+          git: "https://github.com/LiuTianHui123",
           qq: "static/img/aimee/QQ.jpg",
           sina: "https://weibo.com/u/2242812941",
           wechat: "static/img/aimee/erwm.jpg",
@@ -229,6 +249,18 @@ export default {
           timer = null;
         }
       }, 30);
+    },
+    openVisible() {
+      this.visible = true;
+    },
+    cancel() {
+      this.visible = false;
+    },
+    openVisible1() {
+      this.visible1 = true;
+    },
+    cancel1() {
+      this.visible1 = false;
     },
   },
   components: {
@@ -327,9 +359,33 @@ export default {
   position: relative;
   text-decoration: none;
 }
-.rightlistBox .r1-body .catch-me a:hover i {
+.rightlistBox .r1-body .catch-me a:hover #catch1 {
   color: #fff;
-  background: #f4692c;
+  background: #333;
+}
+.rightlistBox .r1-body .catch-me a:hover #catch2 {
+  color: #fff;
+  background: #fc5531;
+}
+.rightlistBox .r1-body .catch-me a:hover #catch3 {
+  color: #fff;
+  background: #fc5531;
+}
+.rightlistBox .r1-body .catch-me a:hover #catch4 {
+  color: #fff;
+  background: #2aae67;
+}
+.rightlistBox .r1-body .catch-me a:hover #catch5 {
+  color: #fff;
+  background: #fc5531;
+}
+.rightlistBox .r1-body .catch-me a:hover #catch6 {
+  color: #fff;
+  background: #b93475;
+}
+.rightlistBox .r1-body .catch-me a:hover #catch7 {
+  color: #fff;
+  background: #4a82a5;
 }
 .rightlistBox .r1-body .catch-me a i {
   display: inline-block;
@@ -509,5 +565,9 @@ export default {
   font-family: "Sigmar One", Arial;
   font-weight: 300;
   font-size: 20px;
+}
+.modalone {
+  width: 100%;
+  min-height: 100px;
 }
 </style>
