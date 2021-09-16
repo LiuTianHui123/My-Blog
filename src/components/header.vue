@@ -200,7 +200,7 @@
       :style="{
         backgroundImage: this.$store.state.themeObj.top_image
           ? 'url(' + this.$store.state.themeObj.top_image + ')'
-          : 'url(static/img/headbg05.jpg)',
+          : 'url(static/img/headbg06.jpg)',
       }"
     >
       <div class="scene">
@@ -212,7 +212,7 @@
             :src="
               this.$store.state.themeObj.head_portrait
                 ? this.$store.state.themeObj.head_portrait
-                : 'static/img/tou.png'
+                : 'static/img/tou.jpg'
             "
             alt=""
           />
@@ -797,7 +797,7 @@ export default {
   /*font-family: 'Sigmar One';*/
 }
 .h-information h2 a {
-  background: linear-gradient(to right, #df2050, #48456d);
+  background: linear-gradient(to right, #805cbc, #a45ba2);
   -webkit-background-clip: text;
   color: transparent;
 }
